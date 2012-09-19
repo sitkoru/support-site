@@ -21,7 +21,7 @@
 			{preload module=start data=recs result=recs}
 			{foreach from=$recs item=rec}
 				<div class="span4">
-					<h2><a href="{$rec.url}">{$rec.title}</a></h2>
+					<h4><a href="{$rec.url}">{$rec.title}</a></h4>
 					<p>{$rec.preview|cut:150:'...'}</p>
 					<p><a class="btn" href="{$rec.url}">Подробнее &raquo;</a></p>
 				</div><!--/span-->
