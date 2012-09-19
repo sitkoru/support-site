@@ -25,9 +25,9 @@
 					<p>{$rec.text|strip_tags|cut:100:'...'}</p>
 					<p><a class="btn" href="{$rec.url}">Подробнее &raquo;</a></p>
 				</div><!--/span-->
-			{if $key is div by 3}
-			</div>
-			<div class="row-fluid">
+			{if ($key > 0) and ($key is div by 3) }
+				</div>
+				<div class="row-fluid">
 			{/if}
 			{/foreach}
 			</div><!--/row-->
