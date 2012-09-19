@@ -19,6 +19,8 @@
 			
 		{preload module=start data=recs dir=$content.sid result=recs}
 		{if $recs}
+			<p></p>
+			<hr />
 			<h3>Подразделы</h3>
 			<ol>
 			{foreach from=$recs item=rec}
