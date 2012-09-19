@@ -4,30 +4,6 @@ class users_module extends default_module{
 
     public $title = 'Люди';
 
-    public $interests = array(
-        'Мобильники',
-        'Фотоаппараты',
-        'Читалки',
-        'Планшеты',
-        'Каталог',
-        'Образование',
-        'Развлечения',
-        'Музыка',
-        'Медицина',
-        'Навигация',
-        'Новости',
-        'Спорт',
-        'Погода'
-    );
-
-    public $activities = array(
-        'Автор',
-        'Фотограф',
-        'Сочувствующий',
-        'Читатель',
-        'Маньяк-любитель'
-    );
-
     //Таблица, где хранятся пользователи
     public $table = 'users';
 
@@ -44,29 +20,6 @@ class users_module extends default_module{
 
     //Шаблоны в модуле по умолчанию
     public $prepares = array(
-
-		'menu_user'			=> array( 'function' => 'getUserMenu', 'title' => 'Меню пользователя' ),
-		'menu_select'		=> array( 'function' => 'getSelectMenu', 'title' => 'Меню отбора контента' ),
-		'menu_content'		=> array( 'function' => 'getContentMenu', 'title' => 'Меню контента' ),
-		'menu_actions'		=> array( 'function' => 'getActionsMenu', 'title' => 'Меню действий' ),
-		'getComponentParams'		=> array( 'function' => 'getComponentParams', 'title' => 'Параметры текущего компонента' ),
-
-
-		//Списки данных, принаджежащих пользователю
-		'my_rating' => 				array('function' => 'compRating', 		'title' => 'Рейтинги', 			'menu'=>'user'),
-		'my_posts' => 				array('function' => 'compPosts', 		'title' => 'Мои публикации', 	'menu'=>'user', 'divider'=>true),
-		'my_comments' => 			array('function' => 'compPosts', 		'title' => 'Мои комментарии', 	'menu'=>'user'),
-		'my_acts' => 				array('function' => 'compPosts', 		'title' => 'Мои действия', 		'menu'=>'user'),
-		'my_apps' => 				array('function' => 'compPosts', 		'title' => 'Мои приложения', 	'menu'=>'user'),
-		'my_friends' => 			array('function' => 'compFriends', 		'title' => 'Мои друзья', 		'menu'=>'user'),
-		'my_have' => 				array('function' => 'compHave', 		'title' => 'Я использую', 		'menu'=>'user', 'divider'=>true),
-		'my_recommend' => 			array('function' => 'compRecommend', 	'title' => 'Я рекомендую', 		'menu'=>'user'),
-		'my_join' => 				array('function' => 'compJoin', 		'title' => 'Я читаю', 			'menu'=>'user'),
-		'my_like' => 				array('function' => 'compLike', 		'title' => 'Мне нравится', 		'menu'=>'user'),
-		'my_favorite' => 			array('function' => 'compFavorite', 	'title' => 'Моё избранное', 	'menu'=>'user'),
- 
-		'my_tags' 					=> array('function' => 'getPopularTags', 	'title' => 'Мои популярные теги'),
-
 	);
 
     //Установка структур модуля
@@ -98,9 +51,6 @@ class users_module extends default_module{
 					'position' => 		array('type' => 'text', 'group' => 'additional', 'title' => 'Должность'),
                    
 					'last_ip'=>			array('type'=>'text', 'group'=>'География', 'title'=>'Последний IP-адрес'),
-					'city'=>			array('type'=>'link', 'group'=>'География', 'title'=>'Город', 'module'=>'city', 'structure_sid'=>'rec'),
-					'region'=>			array('type'=>'menu', 'group'=>'География', 'title'=>'Регион', 'variants'=>model::$modules['city']->region),
-					'macroregion'=>		array('type'=>'menu', 'group'=>'География', 'title'=>'Макрорегион', 'variants'=>model::$modules['city']->macroregion),
 
                     'show_phone' => 	array('type' => 'check', 'group' => 'additional', 'title' => 'Показывать номера телефонов', 'default' => true),
                     'show_icq' => 		array('type' => 'check', 'group' => 'additional', 'title' => 'Показывать ICQ, Jabber, Skype, MSN', 'default' => true),
@@ -195,14 +145,6 @@ class users_module extends default_module{
             ),
         );
 		
-		include_once( model::$config['path']['www'] . '/../classes/users_stuff.php' );		
-		
-		//Поля с мультимедиа
-		posts_module::addMediaFields();
-        
-		//Добавляем всевозможные лайки
-        require_once(model::$config['path']['www'].'/../classes/likes.php');
-        likes::add('friends');
     
     }
 
