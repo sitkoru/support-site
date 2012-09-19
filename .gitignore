@@ -1,0 +1,68 @@
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Images
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.ico
+*.svg
+*.swf
+
+# Logs and databases
+*.log
+*.sql
+*.db
+*.php~
+*.tpl~
+
+# data files
+*.xls
+*.xlsx
+*.csv
+*.txt
+*.xml
+*.htm
+*.html
+*.xhtml
+*.sh
+*.inc
+
+# folders
+phpmyadmin/
+/www/xhprof
+/www/images/
+/www/im/
+/www/f/
+/www/i/
+/www/user_files/
+/www/admin_old
+/www/stat
+/templates/_old/pages/c
+/templates/_old/yamobi.ru/
+/templates/_old/business/
+/templates/business/c
+/templates/yamobi.ru/c
+/templates/pages/c
+/stat
+/cache
+/tmp
+/.ssh
+.svn/
+/www/a011e2cd4d3c8285359221a4fbb9a283/
+
+# different
+DEADJOE
+git-clone.php
+*.sublime-*
+*~
