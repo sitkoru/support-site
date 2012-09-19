@@ -35,7 +35,7 @@
 				{if $rec.sub}
 					<ul>
 					{foreach from=$rec.sub item=rec2}
-						<li><a href="{$rec.url}">{$rec.title}</a></li>
+						<li><a href="{$rec2.url}">{$rec2.title}</a></li>
 					{/foreach}
 					</ul>
 				{/if}
