@@ -1,5 +1,6 @@
 <ul class="breadcrumb">
-	<li><a href="#">Home</a> <span class="divider">/</span></li>
-	<li><a href="#">Library</a> <span class="divider">/</span></li>
-	<li class="active">Data</li>
+{foreach from=$path item=rec}
+	<li><a href="{$rec.url}">{$rec.title}</a> <span class="divider">/</span></li>
+{/foreach}
+	<li class="active">{$content.title}</li>
 </ul>
