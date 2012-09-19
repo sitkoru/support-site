@@ -16,7 +16,7 @@
 			{$content.text}
 			<hr />
 		  
-			<h4>Новые статьи</h4>
+			<h4>Последние обновления</h4>
 			<div class="row-fluid">
 			{preload module=start data=recs text=notempty limit='limit 30' order='order by `date_modify` desc' result=recs}
 			{foreach from=$recs item=rec key=key}
