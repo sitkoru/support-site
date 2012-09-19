@@ -11,6 +11,8 @@
 			</div><!--/span-->
 			
 			<div class="span9">
+
+{include file='path.tpl'}			
 			
 			<h1>{$content.title}</h1>
 			{$content.text}
