@@ -9,5 +9,5 @@
 	color: grey;
 }
 .active a{
-	color: #D14;
+	color: #D14 !important;
 }
