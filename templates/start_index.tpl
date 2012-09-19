@@ -30,22 +30,17 @@
         <div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+			{foreach from=$mainmenu item=rec key=key}
+				<li class="nav-header">{$rec.title}
+				{if $rec.sub}
+					<ul>
+					{foreach from=$rec.sub item=rec2}
+						<li><a href="{$rec.url}">{$rec.title}</a></li>
+					{/foreach}
+					</ul>
+				{/if}
+				</li>
+			{/foreach}
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
