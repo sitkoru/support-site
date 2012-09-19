@@ -16,6 +16,16 @@
 			
 			<h1>{$content.title}</h1>
 			{$content.text}
+			
+		{preload module=start data=recs dir=$content.sid result=recs}
+		{if $recs}
+			<h3>Подразделы</h3>
+			<ol>
+			{foreach from=$recs item=rec}
+				<li><a href="{$rec.url}">{$rec.title}</a></li>
+			{/foreach}
+			</ol>
+		{/if}
 		  
 			</div><!--/span-->
 		</div><!--/row-->
