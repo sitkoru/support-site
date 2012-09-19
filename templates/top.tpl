@@ -1,4 +1,6 @@
-    <div class="navbar navbar-inverse navbar-fixed-top">
+	<hr>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -20,3 +22,5 @@
         </div>
       </div>
     </div>
+
+    <div class="container-fluid">

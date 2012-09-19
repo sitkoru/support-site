@@ -4,7 +4,6 @@
 
 {include file='top.tpl'}
 
-    <div class="container-fluid">
 		<div class="row-fluid">
 		
 			<div class="span3">
@@ -50,13 +49,5 @@
 		  
 			</div><!--/span-->
 		</div><!--/row-->
-
-		<hr>
-
-		<footer>
-			<p>&copy; Company 2012</p>
-		</footer>
-
-    </div><!--/.fluid-container-->
 
 {include file='footer.tpl'}
