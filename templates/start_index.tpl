@@ -20,7 +20,7 @@
 			<div class="row-fluid">
 			{preload module=start data=recs text=notempty order='order by `date_modify` desc' result=recs}
 			{foreach from=$recs item=rec key=key}
-				<div class="span4" style="height:150px;">
+				<div class="span4">
 					<h4><a href="{$rec.url}">{$rec.title}</a></h4>
 					<p>{$rec.text|strip_tags|cut:100:'...'}</p>
 					<p><a class="btn" href="{$rec.url}">Подробнее &raquo;</a></p>
