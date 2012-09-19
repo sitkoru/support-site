@@ -1,7 +1,7 @@
 		<div class="well sidebar-nav">
             <ul class="nav nav-list">
 			{foreach from=$mainmenu item=rec key=key}
-				<li class="nav-header">{$rec.title}
+				<li class="nav-header">{if !$key}{$rec.title}{else}<a href="{$rec.url}">{$rec.title}</a>{/if}
 				{if $rec.sub}
 					<ul>
 					{foreach from=$rec.sub item=rec2}
