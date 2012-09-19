@@ -26,51 +26,14 @@
     </div>
 
     <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-			{foreach from=$mainmenu item=rec key=key}
-				<li class="nav-header">{$rec.title}
-				{if $rec.sub}
-					<ul>
-					{foreach from=$rec.sub item=rec2}
-						<li><a href="{$rec2.url}">{$rec2.title}</a>
-						{if $rec2.sub}
-							<ul>
-							{foreach from=$rec2.sub item=rec3}
-								<li><a href="{$rec3.url}">{$rec3.title}</a>
-								{if $rec3.sub}
-									<ul>
-									{foreach from=$rec3.sub item=rec4}
-										<li><a href="{$rec4.url}">{$rec4.title}</a>
-										{if $rec4.sub}
-											<ul>
-											{foreach from=$rec4.sub item=rec5}
-												<li><a href="{$rec5.url}">{$rec5.title}</a>
-												
-												</li>
-											{/foreach}
-											</ul>
-										{/if}
-										</li>
-									{/foreach}
-									</ul>
-								{/if}
-								</li>
-							{/foreach}
-							</ul>
-						{/if}
-						</li>
-					{/foreach}
-					</ul>
-				{/if}
-				</li>
-			{/foreach}
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
+		<div class="row-fluid">
+		
+			<div class="span3">
+{include file='mainmenu.tpl'
+			</div><!--/span-->
+			
+			<div class="span9">
+			
           <div class="hero-unit">
             <h1>Hello, world!</h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
@@ -110,14 +73,15 @@
               <p><a class="btn" href="#">View details &raquo;</a></p>
             </div><!--/span-->
           </div><!--/row-->
-        </div><!--/span-->
-      </div><!--/row-->
+		  
+			</div><!--/span-->
+		</div><!--/row-->
 
-      <hr>
+		<hr>
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+		<footer>
+			<p>&copy; Company 2012</p>
+		</footer>
 
     </div><!--/.fluid-container-->
 
