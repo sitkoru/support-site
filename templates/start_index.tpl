@@ -18,11 +18,11 @@
 		  
 			<h4>Новые статьи</h4>
 			<div class="row-fluid">
-			{preload module=start data=recs text=notempty order='order by `date_modify` desc' result=recs}
+			{preload module=start data=recs order='order by `date_modify` desc' result=recs}
 			{foreach from=$recs item=rec}
 				<div class="span4">
 					<h4><a href="{$rec.url}">{$rec.title}</a></h4>
-					<p>{$rec.preview|cut:150:'...'}</p>
+					<p>{$rec.text|cut:150:'...'}</p>
 					<p><a class="btn" href="{$rec.url}">Подробнее &raquo;</a></p>
 				</div><!--/span-->
 			{/foreach}
