@@ -8,6 +8,6 @@
 .nav li li li a{
 	color: grey;
 }
-.active a{
+.active>a{
 	color: #D14 !important;
 }
