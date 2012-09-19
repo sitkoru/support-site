@@ -10,7 +10,7 @@
 							<ul>
 							{foreach from=$rec2.sub item=rec3}
 								<li><a href="{$rec3.url}">{$rec3.title}</a>
-								{if $rec3.sub}
+								{if $rec3.sub and $rec3.show_subs}
 									<ul>
 									{foreach from=$rec3.sub item=rec4}
 										<li><a href="{$rec4.url}">{$rec4.title}</a>
