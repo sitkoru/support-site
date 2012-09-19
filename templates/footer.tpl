@@ -1,6 +1,6 @@
 
 		<footer>
-			<p>&copy; {$settings.copyright}, 2012{if $smarty.now|date_format:'%Y' > 2012} - {$smarty.now|date_format:'%Y'}{/if}.</p>
+			<p>&copy; 2012{if $smarty.now|date_format:'%Y' > 2012} - {$smarty.now|date_format:'%Y'}{/if}, {$settings.copyright}.</p>
 		</footer>
 
     </div><!--/.fluid-container-->
