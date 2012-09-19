@@ -10,9 +10,13 @@
           </a>
           <a class="brand" href="/">{$settings.domain_title}</a>
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
+			<p class="navbar-text pull-right">
+			{if $user.id}
+				Авторизован под аккаунтом: <a href="#" class="navbar-link">{$user.title}</a>
+			{else}
+				Вход не выполнен
+			{/if}
+			</p>
             <ul class="nav">
               <li class="active"><a href="/">Главная</a></li>
               <li><a href="http://sitko.ru">Официальный сайт</a></li>
