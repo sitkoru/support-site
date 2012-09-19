@@ -63,6 +63,5 @@ phpmyadmin/
 
 # different
 DEADJOE
-git-clone.php
 *.sublime-*
 *~
