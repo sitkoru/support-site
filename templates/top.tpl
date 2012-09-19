@@ -18,7 +18,7 @@
 			{/if}
 			</p>
             <ul class="nav">
-              <li class="active"><a href="/">Главная</a></li>
+              <li><a href="/">Главная</a></li>
               <li><a href="http://sitko.ru">Официальный сайт</a></li>
               <li><a href="http://blog.sitko.ru">Блог</a></li>
             </ul>
