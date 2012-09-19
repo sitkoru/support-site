@@ -14,9 +14,9 @@
               Logged in as <a href="#" class="navbar-link">Username</a>
             </p>
             <ul class="nav">
-              <li class="active"><a href="/">Главная</a></li>
-              <li><a href="http://sitko.ru">Официальный сайт</a></li>
-              <li><a href="http://blog.sitko.ru">Блог</a></li>
+              <li class="active"><a href="/">Р“Р»Р°РІРЅР°СЏ</a></li>
+              <li><a href="http://sitko.ru">РћС„РёС†РёР°Р»СЊРЅС‹Р№ СЃР°Р№С‚</a></li>
+              <li><a href="http://blog.sitko.ru">Р‘Р»РѕРі</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
