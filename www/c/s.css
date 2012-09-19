@@ -1,4 +1,4 @@
-.nav li>li>li{
+.nav li li{
 	text-transform: none;
 	color: grey;
 }
