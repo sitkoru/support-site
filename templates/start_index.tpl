@@ -14,6 +14,7 @@
 			
 			<h1>{$content.title}</h1>
 			{$content.text}
+			<hr />
 		  
 			<h4>Новые статьи</h4>
 			<div class="row-fluid">
