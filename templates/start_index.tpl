@@ -1,4 +1,4 @@
-{include file='../general/head.tpl'}
+{include file='head.tpl'}
 
   <body>
 
@@ -100,4 +100,4 @@
 
     </div><!--/.fluid-container-->
 
-{include file='../general/footer.tpl'}
+{include file='footer.tpl'}
