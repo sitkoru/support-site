@@ -12,10 +12,8 @@
 			
 			<div class="span9">
 			
-			<div class="hero-unit">
-				<h1>{$content.title}</h1>
-				{$content.text}
-			</div>
+			<h1>{$content.title}</h1>
+			{$content.text}
 		  
 			<h4>Новые статьи</h4>
 			<div class="row-fluid">
