@@ -1,6 +1,6 @@
 {include file='head.tpl'}
 
-  <body>
+<body>
 
 {include file='top.tpl'}
 
