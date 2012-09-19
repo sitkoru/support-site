@@ -29,7 +29,7 @@
 		<div class="row-fluid">
 		
 			<div class="span3">
-{include file='mainmenu.tpl'
+{include file='mainmenu.tpl'}
 			</div><!--/span-->
 			
 			<div class="span9">
