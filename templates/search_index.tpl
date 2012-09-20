@@ -16,7 +16,7 @@
 			
 			<h1>{$content.title}</h1>
 			<p>
-				Вы искали: {$content.result.q|escape:'htmlall'}
+				Вы искали: <strong>{$content.result.ask|escape:'htmlall'}</strong>
 			</p>
 			
 			</div><!--/span-->
