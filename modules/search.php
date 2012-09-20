@@ -60,7 +60,7 @@ class search_module extends default_module{
 					'title'	=> $module->title,
 					'ask'	=> $q,
 					'count'	=> $result['count'] + $result_recs['count'],
-					'recs'	=> array_merge( $result['recs'], $result_recs['recs'] ),
+					'recs'	=> array_merge( (array)$result['recs'], (array)$result_recs['recs'] ),
 				);
         }
 
