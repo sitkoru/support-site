@@ -16,7 +16,7 @@
 			
 			<h1>{$content.title}</h1>
 			<p>
-				Вы искали: {$content.result.q|filder:'htmlall'}
+				Вы искали: {$content.result.q|filter:'htmlall'}
 			</p>
 			
 			</div><!--/span-->
