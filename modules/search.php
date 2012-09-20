@@ -31,7 +31,7 @@ class search_module extends default_module{
         foreach (model::$modules as $module_sid => $module) {
 
             // Пропускаем игнорируемые модули
-            if (!$module->searchable) continue;
+            if( !IsSet($module->searchable) || !$module->searchable) continue;
 
             if(method_exists($module,'moduleSearch'))
                 $result_recs = $module->moduleSearch($q);
@@ -65,7 +65,7 @@ class search_module extends default_module{
 
         foreach (model::$modules[$module_sid]->structure[$structure_sid]['fields'] as $field_sid => $field)
             // Условия поиска по полям
-            if ( (model::$types[$field['type']]->searchable && !IsSet()) || $field['searchable'] )
+            if( (model::$types[ $field['type'] ]->searchable && !IsSet( $field['searchable'] )) || $field['searchable'] )
                 $where['or'][] = '`' . $field_sid . '` LIKE "%' . $q . '%"';
 				 
 		pr_r( $where['or'] );
