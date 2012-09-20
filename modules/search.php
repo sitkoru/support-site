@@ -95,6 +95,8 @@ pr_r( model::$last_sql );
             'getall'
         );
 
+pr_r( model::$last_sql );
+		
         return array('count' => $count, 'recs' => $recs);
     }
 
