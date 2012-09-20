@@ -65,7 +65,9 @@ class search_module extends default_module{
             // Условия поиска по полям
             if( (model::$types[ $field['type'] ]->searchable && !IsSet( $field['searchable'] )) || $field['searchable'] )
                 $where['or'][] = '`' . $field_sid . '` LIKE "%' . str_replace(' ', '%', $q) . '%"';
-				 
+		
+pr_r( $where );
+		
         //Получаем количество результатов поиска по структуре
         $recs_count = $this->model->makeSql(
             array(
