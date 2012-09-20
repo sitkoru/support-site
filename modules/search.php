@@ -82,7 +82,9 @@ pr_r( $where );
 pr_r( model::$last_sql );
 		
         $count = $recs_count[0]['counter'];
-
+		if( IsSet( $_GET['items_per_page'] ) )
+			$items_per_page = max( 15, intval( $items_per_page ) );
+		
         // TODO: Постраничность
         // Получаем записи относительно структуры
         $recs = model::makeSql(
@@ -90,7 +92,7 @@ pr_r( model::$last_sql );
                 'tables' => array(model::$modules[$module_sid]->getCurrentTable($structure_sid)),
                 'where' => $where,
                 'order' => 'order by `date_public` desc',
-                'limit' => 'limit 0, '.$this->config['items_per_page']
+                'limit' => 'limit 0, '.$items_per_page
             ),
             'getall'
         );
