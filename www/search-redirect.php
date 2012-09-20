@@ -1,6 +1,6 @@
 <?php
 
-$f = fopen('search.log', 'a+');
+$f = fopen('search.txt', 'a+');
 fwrite($f, date("Y-m-d H:i:s").': ' .serialize( $_GET ) . "\n");
 fclose( $f );
 
