@@ -22,8 +22,8 @@
 			
 			{if $content.result.count > 0}
 				<ol>
-				{foreach from=$content.result.recs item=rec}
-					<li><a href="{$rec.url}">{$rec.title}</a></li>
+				{foreach from=$content.result.recs item=rec key=key}
+					<li{if !$key} value="{$content.result.from}"{/if}><a href="{$rec.url}">{$rec.title}</a></li>
 				{/foreach}
 				</ol>
 			{/if}
@@ -32,7 +32,7 @@
 				<div class="pagination">
 					<ul>
 					{foreach from=$content.result.pages.items item=page key=key}
-						<li{if !$key} value="{$content.result.from}"{/if}>{if $key == $content.result.current}<span>{$key+1}</span>{else}<a href="{$page.url}">{$key+1}</a>{/if}</li>
+						<li>{if $key == $content.result.current}<span>{$key+1}</span>{else}<a href="{$page.url}">{$key+1}</a>{/if}</li>
 					{/foreach}
 					</ul>
 				</div>
