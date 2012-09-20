@@ -37,8 +37,6 @@ class search_module extends default_module{
 
 		}
 		
-		pr_r($record['result']['pages']);
-		
 		return $record;	
 	}
 
