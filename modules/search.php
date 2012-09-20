@@ -38,8 +38,6 @@ class search_module extends default_module{
             else
             $result_recs =$this->defaultModuleSearch($module_sid, $structure_sid, $q);
 
-            
-
             foreach ($result_recs['recs'] as $i => $rec) {
                 $rec=$module->explodeRecord($rec,'rec');
                 $rec=$module->insertRecordUrlType($rec);
@@ -66,11 +64,8 @@ class search_module extends default_module{
         foreach (model::$modules[$module_sid]->structure[$structure_sid]['fields'] as $field_sid => $field)
             // Условия поиска по полям
             if( (model::$types[ $field['type'] ]->searchable && !IsSet( $field['searchable'] )) || $field['searchable'] )
-                $where['or'][] = '`' . $field_sid . '` LIKE "%' . $q . '%"';
+                $where['or'][] = '`' . $field_sid . '` LIKE "%' . str_replace(' ', '%', $q) . '%"';
 				 
-		pr_r( $where['or'] );
-				
-				
         //Получаем количество результатов поиска по структуре
         $recs_count = $this->model->makeSql(
             array(
