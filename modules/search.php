@@ -8,10 +8,10 @@ class search_module extends default_module{
 	public function contentPrepare( $record ){
 	
 		if( IsSet( $_GET['q'] ) ){
-			$record = array_merge( $record, $this->compSearch( $_GET ) );
+			$record['result'] = $this->compSearch( $_GET );
 		}
 		
-		pr_r( $record );
+		pr_r( $record['result'] );
 		
 		return $record;	
 	}
