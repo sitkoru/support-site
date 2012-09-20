@@ -32,6 +32,7 @@ class search_module extends default_module{
 				'chop_to_pages' => true,
 				'items_per_page' => $items_per_page,
 			);
+			pr_r($params);
 			
 			$record['result'] = model::$modules['start']->prepareRecs( $params );
 
