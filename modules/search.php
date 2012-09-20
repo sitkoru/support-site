@@ -46,6 +46,7 @@ class search_module extends default_module{
             // Записываем результат
             $result[$module_sid] = array(
                 'title'=>$module->title,
+                'ask'=>$q,
                 'count'=>$result_recs['count'],
                 'recs'=>$result_recs['recs']
             );
