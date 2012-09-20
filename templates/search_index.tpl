@@ -32,7 +32,7 @@
 				<div class="pagination">
 					<ul>
 					{foreach from=$content.result.pages.items item=page key=key}
-						<li>{if $key == $content.result.current}{$key+1}{else}<a href="{$page.url}">{$key+1}</a>{/if}</li>
+						<li>{if $key == $content.result.current}<span>{$key+1}</span>{else}<a href="{$page.url}">{$key+1}</a>{/if}</li>
 					{/foreach}
 					</ul>
 				</div>
