@@ -27,6 +27,16 @@
 				{/foreach}
 				</ol>
 			{/if}
+				
+			{if count( $content.result.pages ) > 1}
+				<div class="pagination">
+					<ul>
+					{foreach from=$content.result.pages item=page}
+						<li><a href="{$rec.url}">{$k+1}</a></li>
+					{/foreach}
+					</ul>
+				</div>
+			{/if}
 			
 			</div><!--/span-->
 		</div><!--/row-->
