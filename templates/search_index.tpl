@@ -21,7 +21,6 @@
 						<input type="text" name="q" class="span2 search-query" style="width:400px;" placeholder="{$content.result.ask|escape:'htmlall'}">
 						<button type="submit" class="btn">найти</button>
 					</div>
-					Например: <a href="#">домен</a>
 				</form>
 		
 		{if isset( $content.result )}
