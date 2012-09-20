@@ -69,7 +69,7 @@ class search_module extends default_module{
 pr_r( $where );
 		
         //Получаем количество результатов поиска по структуре
-        $recs_count = $this->model->makeSql(
+        $recs_count = model::makeSql(
             array(
                  'tables' => array(model::$modules[$module_sid]->getCurrentTable($structure_sid)),
                  'fields' => array( 'count(`id`) as `counter`' ),
@@ -79,6 +79,8 @@ pr_r( $where );
             'getall'
         );
 
+pr_r( model::$last_sql );
+		
         $count = $recs_count[0]['counter'];
 
         // TODO: Постраничность
