@@ -11,118 +11,36 @@ class search_module extends default_module{
 	public function contentPrepare( $record ){
 	
 		if( IsSet( $_GET['q'] ) ){
-			$record['result'] = $this->compSearch( $_GET );
+			
+			// Сюда копим условия поиска по модулю
+			$where = array();
+
+			// Условия поиска по полям
+			foreach (model::$modules['start']->structure['rec']['fields'] as $field_sid => $field)
+				if( (model::$types[ $field['type'] ]->searchable && !IsSet( $field['searchable'] )) || $field['searchable'] )
+					$where['or'][] = '`' . $field_sid . '` LIKE "%' . str_replace(' ', '%', $q) . '%"';
+			
+			// Количество записей на страницу
+			$count = $recs_count[0]['counter'];
+			$items_per_page = $this->items_per_page;
+			if( IsSet( $_GET['items_per_page'] ) )
+				$items_per_page = max( 5, intval( $_GET['items_per_page'] ) );
+			
+			//Записи
+			$params = array(
+				'where' => '(' . implode(' or ', $where['or']) . ')',
+				'chop_to_pages' => true,
+				'items_per_page' => $items_per_page,
+			);
+			
+			$record['result'] = model::$modules['start']->prepareRecs( $params );
+
 		}
 		
 		pr_r($record['result']['pages']);
 		
 		return $record;	
 	}
-	
-    // TODO: Поиск по тегам
-    // Функция поиска по модулям
-    public function compSearch($values){
-
-        // Фильтрация запроса
-        $q = mysql_real_escape_string( $values['q'] );
-
-        //Поиск только по структуре rec        
-        $structure_sid = 'rec';
-        $result = array();
-
-        // Проходим по всем модулям
-        foreach (model::$modules as $module_sid => $module) {
-
-            // Пропускаем игнорируемые модули
-            if( !IsSet($module->searchable) || !$module->searchable) continue;
-
-            if(method_exists($module,'moduleSearch'))
-                $result_recs = $module->moduleSearch($q);
-            else
-            $result_recs =$this->defaultModuleSearch($module_sid, $structure_sid, $q);
-
-            foreach ($result_recs['recs'] as $i => $rec) {
-                $rec=$module->explodeRecord($rec,'rec');
-                $rec=$module->insertRecordUrlType($rec);
-
-                $result_recs['recs'][$i] = $rec;
-            }
-            // Записываем результат
-			if( $this->chop_to_modules )
-				$result[$module_sid] = array(
-					'title'=>$module->title,
-					'ask'=>$q,
-					'count'=>$result_recs['count'],
-					'recs'=>$result_recs['recs']
-				);
-			else
-				$result = array(
-					'title'	=> $module->title,
-					'ask'	=> $q,
-					'count'	=> $result['count'] + $result_recs['count'],
-					'recs'	=> array_merge( (array)$result['recs'], (array)$result_recs['recs'] ),
-				);
-        }
-
-        return $result;
-
-    }
-
-    private function defaultModuleSearch($module_sid, $structure_sid, $q)
-    {
-        // Сюда копим условия поиска по модулю
-        $where = array();
-
-		// Условия поиска по полям
-		foreach (model::$modules[$module_sid]->structure[$structure_sid]['fields'] as $field_sid => $field)
-            if( (model::$types[ $field['type'] ]->searchable && !IsSet( $field['searchable'] )) || $field['searchable'] )
-                $where['or'][] = '`' . $field_sid . '` LIKE "%' . str_replace(' ', '%', $q) . '%"';
-		
-		// Количество записей на страницу
-        $count = $recs_count[0]['counter'];
-		$items_per_page = $this->items_per_page;
-		if( IsSet( $_GET['items_per_page'] ) )
-			$items_per_page = max( 5, intval( $_GET['items_per_page'] ) );
-		
-		//Записи
-		$params = array(
-			'where' => '(' . implode(' or ', $where['or']) . ')',
-			'chop_to_pages' => true,
-			'items_per_page' => $items_per_page,
-		);
-		
-		$result = model::$modules['start']->prepareRecs( $params );
-		
-//		pr_r( $result );
-
-/*		
-        //Получаем количество результатов поиска по структуре
-        $recs_count = model::makeSql(
-            array(
-                 'tables' => array(model::$modules[$module_sid]->getCurrentTable($structure_sid)),
-                 'fields' => array( 'count(`id`) as `counter`' ),
-                 'where' => $where,
-                 'order' => 'order by `date_public` desc'
-            ),
-            'getall'
-        );
-
-        // TODO: Постраничность
-        // Получаем записи относительно структуры
-        $recs = model::makeSql(
-            array(
-                'tables' => array(model::$modules[$module_sid]->getCurrentTable($structure_sid)),
-                'where' => $where,
-                'order' => 'order by `date_public` desc',
-                'limit' => 'limit 0, '.$items_per_page
-            ),
-            'getall'
-        );
-
-pr_r( model::$last_sql );
-*/		
-        return $result;
-    }
 
 }
 
