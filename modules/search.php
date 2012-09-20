@@ -4,6 +4,8 @@ class search_module extends default_module{
 
 	public $title='Поиск по сайту';
 	public $items_per_page = 15;
+	
+	public $chop_to_modules = false
 
 	// Страница контента - показывает результаты поиска
 	public function contentPrepare( $record ){
@@ -44,12 +46,20 @@ class search_module extends default_module{
                 $result_recs['recs'][$i] = $rec;
             }
             // Записываем результат
-            $result[$module_sid] = array(
-                'title'=>$module->title,
-                'ask'=>$q,
-                'count'=>$result_recs['count'],
-                'recs'=>$result_recs['recs']
-            );
+			if( $this->chop_to_modules )
+				$result[$module_sid] = array(
+					'title'=>$module->title,
+					'ask'=>$q,
+					'count'=>$result_recs['count'],
+					'recs'=>$result_recs['recs']
+				);
+			else
+				$result = array(
+					'title'	=> $module->title,
+					'ask'	=> $q,
+					'count'	=> $result['count'] + $result_recs['count'],
+					'recs'	=> array_merge( $result['recs'], $result_recs['recs'] ),
+				);
         }
 
         return $result;
