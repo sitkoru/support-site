@@ -22,7 +22,7 @@ class search_module extends default_module{
     public function compSearch($values){
 
         // Фильтрация запроса
-        $q = mysql_real_escape_string($values['q']);
+        $q = mysql_real_escape_string( $values['q'] );
 
         //Поиск только по структуре rec        
         $structure_sid = 'rec';
