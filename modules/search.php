@@ -86,7 +86,6 @@ class search_module extends default_module{
 		$params = array(
 			'where' => '(' . implode(' or ', $where['or']) . ')',
 			'chop_to_pages' => true,
-			'chop_to_pages' => true,
 			'items_per_page' => $items_per_page,
 		);
 		

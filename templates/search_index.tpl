@@ -32,7 +32,7 @@
 				<div class="pagination">
 					<ul>
 					{foreach from=$content.result.pages item=page}
-						<li><a href="{$rec.url}">{$k+1}</a></li>
+						<li><a href="{$page.url}">{$k+1}</a></li>
 					{/foreach}
 					</ul>
 				</div>
