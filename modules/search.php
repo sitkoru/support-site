@@ -87,6 +87,7 @@ class search_module extends default_module{
 			'where' => '(' . implode(' or ', $where['or']) . ')',
 			'chop_to_pages' => true,
 			'items_per_page' => $items_per_page,
+		);
 		
 		$result = model::$modules['start']->prepareRecs( $params );
 		
