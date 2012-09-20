@@ -14,8 +14,6 @@ class search_module extends default_module{
 			$record['result'] = $this->compSearch( $_GET );
 		}
 		
-		pr_r($record);
-		
 		return $record;	
 	}
 	
