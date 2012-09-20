@@ -7,10 +7,8 @@ class search_module extends default_module{
 	// Страница контента - показывает результаты поиска
 	public function contentPrepare( $record ){
 	
-		pr_r( $values );
-	
-		if( IsSet( $values['q'] ) ){
-			$record = $this->compSearch( $values );
+		if( IsSet( $_GET['q'] ) ){
+			$record = $this->compSearch( $_GET );
 		}
 		
 		pr_r( $record );
