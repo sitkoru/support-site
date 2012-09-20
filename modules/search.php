@@ -36,7 +36,7 @@ class search_module extends default_module{
 			);
 			
 			$record['result'] = model::$modules['start']->prepareRecs( $params );
-			$record['ask'] = $q;
+			$record['result']['ask'] = $q;
 
 		}
 		
