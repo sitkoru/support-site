@@ -120,7 +120,7 @@ class search_module extends default_module{
 
 pr_r( model::$last_sql );
 */		
-        return array('count' => $count, 'recs' => $recs);
+        return $result;
     }
 
 }
