@@ -12,6 +12,8 @@ class search_module extends default_module{
 	
 		if( IsSet( $_GET['q'] ) ){
 			
+			$q = mysql_real_escape_string( $_GET['q'] );
+			
 			// Сюда копим условия поиска по модулю
 			$where = array();
 
