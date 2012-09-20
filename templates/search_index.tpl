@@ -23,7 +23,7 @@
 			{if $content.result.count > 0}
 				<ol>
 				{foreach from=$content.result.recs item=rec key=key}
-					<li{if !$key} value="{$content.result.from}"{/if}><a href="{$rec.url}">{$rec.title}</a></li>
+					<li{if !$key} value="{$content.result.from+1}"{/if}><a href="{$rec.url}">{$rec.title}</a></li>
 				{/foreach}
 				</ol>
 			{/if}
