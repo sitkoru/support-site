@@ -31,7 +31,7 @@ class search_module extends default_module{
         foreach (model::$modules as $module_sid => $module) {
 
             // Пропускаем игнорируемые модули
-            if (!isset($module->searchable) || !$module->searchable) continue;
+            if (!$module->searchable) continue;
 
             if(method_exists($module,'moduleSearch'))
                 $result_recs = $module->moduleSearch($q);
