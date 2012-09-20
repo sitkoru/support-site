@@ -83,7 +83,7 @@ pr_r( model::$last_sql );
 		
         $count = $recs_count[0]['counter'];
 		if( IsSet( $_GET['items_per_page'] ) )
-			$items_per_page = max( 15, intval( $items_per_page ) );
+			$items_per_page = max( 15, intval( $_GET['items_per_page'] ) );
 		
         // TODO: Постраничность
         // Получаем записи относительно структуры
