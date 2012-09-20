@@ -15,8 +15,16 @@
 {include file='path.tpl'}			
 				
 				<h1>{$content.title}</h1>
+			
+				<form class="form-search" method="get" action="/search.html">
+					<div class="input-append">
+						<input type="text" name="q" class="span2 search-query" placeholder="{$content.result.ask|escape:'htmlall'}">
+						<button type="submit" class="btn">найти</button>
+					</div>
+				</form>
+		
+		{if isset( $content.result )}
 				<p>
-					Вы искали: <strong>{$content.result.ask|escape:'htmlall'}</strong><br />
 					Нашлось: {$content.result.count} {numeric value=$content.result.count form1='вариант' form2='варианта' form5='вариантов'}
 				</p>
 			
@@ -37,8 +45,9 @@
 					</ul>
 				</div>
 			{/if}
-			
-			
+		{/if}
+
+		
 			</div><!--/span-->
 		</div><!--/row-->
 
