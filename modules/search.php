@@ -5,7 +5,7 @@ class search_module extends default_module{
 	public $title='Поиск по сайту';
 	public $items_per_page = 15;
 	
-	public $chop_to_modules = false
+	public $chop_to_modules = false;
 
 	// Страница контента - показывает результаты поиска
 	public function contentPrepare( $record ){
