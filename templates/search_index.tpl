@@ -22,7 +22,7 @@
 			
 			{if $content.result.count > 0}
 				<ol>
-				{foreach from=$$content.result.recs item=rec}
+				{foreach from=$content.result.recs item=rec}
 					<li><a href="{$rec.url}">{$rec.title}</a></li>
 				{/foreach}
 				</ol>
