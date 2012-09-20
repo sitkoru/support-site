@@ -4,6 +4,7 @@ class start_module extends default_module{
 
 	public $title='Статьи';
 
+	public $searchable = true;
 	public $items_per_page = 10;
 
 	//Шаблоны в модуле по умолчанию

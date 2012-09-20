@@ -7,14 +7,11 @@ class search_module extends default_module{
 	// Страница контента - показывает результаты поиска
 	public function contentPrepare( $record ){
 	
-		if( IsSet( $_GET['text'] ) ){
-		
-			
-		
+		if( IsSet( $values['q'] ) ){
+			$record = $this->compSearch( $values );
 		}
-		pr_r( $_GET );
-		return $record;
-	
+		
+		return $record;	
 	}
 	
     // TODO: Поиск по тегам
