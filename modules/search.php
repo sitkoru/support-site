@@ -11,6 +11,8 @@ class search_module extends default_module{
 			$record = $this->compSearch( $values );
 		}
 		
+		pr_r( $record );
+		
 		return $record;	
 	}
 	
