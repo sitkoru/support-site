@@ -80,7 +80,7 @@ class search_module extends default_module{
         $count = $recs_count[0]['counter'];
 		$items_per_page = $this->items_per_page;
 		if( IsSet( $_GET['items_per_page'] ) )
-			$items_per_page = max( 15, intval( $_GET['items_per_page'] ) );
+			$items_per_page = max( 5, intval( $_GET['items_per_page'] ) );
 		
 		//Записи
 		$params = array(
