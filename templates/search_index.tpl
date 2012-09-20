@@ -18,7 +18,7 @@
 			
 				<form class="form-search" method="get" action="/search.html">
 					<div class="input-append">
-						<input type="text" name="q" class="span2 search-query" placeholder="{$content.result.ask|escape:'htmlall'}">
+						<input type="text" name="q" class="span2 search-query" style="width:400px;" placeholder="{$content.result.ask|escape:'htmlall'}">
 						<button type="submit" class="btn">найти</button>
 					</div>
 				</form>
