@@ -65,7 +65,7 @@ class search_module extends default_module{
 
         foreach (model::$modules[$module_sid]->structure[$structure_sid]['fields'] as $field_sid => $field)
             // Условия поиска по полям
-            if (model::$types[$field['type']]->searchable && $field['searchable'])
+            if ( (model::$types[$field['type']]->searchable && !IsSet()) || $field['searchable'] )
                 $where['or'][] = '`' . $field_sid . '` LIKE "%' . $q . '%"';
 				 
 		pr_r( $where['or'] );
