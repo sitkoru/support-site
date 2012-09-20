@@ -86,12 +86,14 @@ class search_module extends default_module{
 		$params = array(
 			'where' => '(' . implode(' or ', $where['or']) . ')',
 			'chop_to_pages' => true,
+			'chop_to_pages' => true,
 			'items_per_page' => $items_per_page,
 		);
 		
 		$result = model::$modules['start']->prepareRecs( $params );
 		
-		pr_r( $result );
+//		pr_r( $result );
+
 /*		
         //Получаем количество результатов поиска по структуре
         $recs_count = model::makeSql(
