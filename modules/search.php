@@ -3,6 +3,7 @@
 class search_module extends default_module{
 
 	public $title='Поиск по сайту';
+	public $items_per_page = 15;
 
 	// Страница контента - показывает результаты поиска
 	public function contentPrepare( $record ){
@@ -82,6 +83,7 @@ pr_r( $where );
 pr_r( model::$last_sql );
 		
         $count = $recs_count[0]['counter'];
+		$items_per_page = $this->items_per_page;
 		if( IsSet( $_GET['items_per_page'] ) )
 			$items_per_page = max( 15, intval( $_GET['items_per_page'] ) );
 		
